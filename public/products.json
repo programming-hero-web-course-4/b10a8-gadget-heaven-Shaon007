@@ -1,0 +1,203 @@
+[
+  {
+    "product_id": "P001",
+    "product_title": "Apple iPhone 15 Pro Max",
+    "product_image": "https://i.pinimg.com/564x/e7/bf/42/e7bf42f9914ac32d63dab02813d1280c.jpg",
+    "category": "Smartphones",
+    "price": 1299,
+    "description": "Experience the ultimate smartphone with the iPhone 15 Pro Max.",
+    "specification": [
+      "6.7-inch Super Retina XDR display",
+      "A17 Bionic chip",
+      "Triple-camera system (48MP Main, 12MP Telephoto, 12MP Ultrawide)",
+      "LiDAR Scanner",
+      "Up to 2TB storage"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P002",
+    "product_title": "Samsung Galaxy S23 Ultra",
+    "product_image": "https://i.pinimg.com/564x/43/11/a3/4311a3ca3e3f3b5a27e3ffc08cfbfecf.jpg",
+    "category": "Smartphones",
+    "price": 1199,
+    "description": "Powerful performance with the Samsung Galaxy S23 Ultra.",
+    "specification": [
+      "6.8-inch QHD+ Dynamic AMOLED display",
+      "Snapdragon 8 Gen 2 chip",
+      "200MP Quad-camera system",
+      "5000mAh battery",
+      "1TB storage option"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P003",
+    "product_title": "Google Pixel 7 Pro",
+    "product_image": "https://i.pinimg.com/736x/1d/40/89/1d4089f8aa949a0155afa3588c57158a.jpg",
+    "category": "Smartphones",
+    "price": 899,
+    "description": "A smartphone that gets smarter with Google’s AI.",
+    "specification": [
+      "6.7-inch QHD+ LTPO OLED display",
+      "Google Tensor G2 processor",
+      "50MP wide and 48MP telephoto cameras",
+      "Titan M2 security chip",
+      "512GB storage"
+    ],
+    "availability": false,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P004",
+    "product_title": "Sony WH-1000XM5",
+    "product_image": "https://i.pinimg.com/564x/08/25/4c/08254ce0f681476675c70cedff46c6bf.jpg",
+    "category": "Headphones",
+    "price": 399,
+    "description": "Experience superior noise cancellation with Sony WH-1000XM5.",
+    "specification": [
+      "Noise Cancelling Technology",
+      "30-hour battery life",
+      "Touch controls",
+      "Multipoint Bluetooth connectivity"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P005",
+    "product_title": "Bose QuietComfort 45",
+    "product_image": "https://i.pinimg.com/736x/d9/06/b9/d906b957efec13470cb6e2671fd94ed0.jpg",
+    "category": "Headphones",
+    "price": 329,
+    "description": "Comfort and silence with Bose QuietComfort 45 headphones.",
+    "specification": [
+      "Acoustic Noise Cancelling",
+      "24-hour battery life",
+      "Lightweight design",
+      "Adjustable EQ"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P006",
+    "product_title": "Jabra Elite 85h",
+    "product_image": "https://i.pinimg.com/736x/e3/d8/00/e3d8008a1de62e8cc5cb2dbc81045bfc.jpg",
+    "category": "Headphones",
+    "price": 249,
+    "description": "Smart noise cancellation for your day-to-day life.",
+    "specification": [
+      "Smart Active Noise Cancellation",
+      "36-hour battery life",
+      "Water-resistant design",
+      "8 built-in microphones"
+    ],
+    "availability": false,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P007",
+    "product_title": "MacBook Pro 16-inch",
+    "product_image": "https://i.pinimg.com/736x/79/c1/ea/79c1eadc7cf5bdc42056ac47ced8305c.jpg",
+    "category": "Laptops",
+    "price": 2499,
+    "description": "The ultimate pro notebook with M1 Pro and M1 Max options.",
+    "specification": [
+      "16-inch Liquid Retina XDR display",
+      "Apple M1 Pro/Max chip",
+      "Up to 64GB unified memory",
+      "1TB SSD storage",
+      "100Wh battery with fast charging"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "P008",
+    "product_title": "Dell XPS 13",
+    "product_image": "https://i.pinimg.com/564x/e7/8f/d3/e78fd37bd92cf211b85f0279e31edec2.jpg",
+    "category": "Laptops",
+    "price": 1199,
+    "description": "Compact and powerful, the Dell XPS 13 is made for productivity.",
+    "specification": [
+      "13.4-inch FHD+ InfinityEdge display",
+      "Intel i7 11th Gen processor",
+      "16GB RAM",
+      "512GB SSD storage",
+      "Fingerprint reader"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P009",
+    "product_title": "HP Spectre x360",
+    "product_image": "https://i.pinimg.com/564x/b7/b0/29/b7b029281712853988ac7ee9edbc993d.jpg",
+    "category": "Laptops",
+    "price": 1499,
+    "description": "Flexible and powerful, with a 360° hinge for versatile use.",
+    "specification": [
+      "13.5-inch 3K2K OLED touchscreen",
+      "Intel i7 12th Gen processor",
+      "16GB RAM",
+      "1TB SSD storage",
+      "HP Sure View privacy screen"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P010",
+    "product_title": "Lenovo ThinkPad X1 Carbon",
+    "product_image": "https://i.pinimg.com/564x/30/8b/e4/308be4259434a023f6e8d5d7b0545629.jpg",
+    "category": "Laptops",
+    "price": 1299,
+    "description": "Durable and powerful, designed for professionals.",
+    "specification": [
+      "14-inch FHD display",
+      "Intel i7 10th Gen processor",
+      "16GB RAM",
+      "512GB SSD storage",
+      "Lightweight carbon fiber build"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P011",
+    "product_title": "ASUS ROG Zephyrus G14",
+    "product_image": "https://i.pinimg.com/564x/62/05/77/620577250a1226ba7c7deda5a2725fb5.jpg",
+    "category": "Laptops",
+    "price": 1599,
+    "description": "Gaming and portability combined in the ASUS ROG Zephyrus G14.",
+    "specification": [
+      "14-inch WQHD display with 120Hz refresh rate",
+      "AMD Ryzen 9 processor",
+      "NVIDIA GeForce RTX 3060 GPU",
+      "16GB RAM",
+      "1TB SSD storage"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P012",
+    "product_title": "Acer Swift 5",
+    "product_image": "https://i.pinimg.com/564x/9b/a6/d1/9ba6d162a5cfd1ac2e48c9666b9ca5f9.jpg",
+    "category": "Laptops",
+    "price": 999,
+    "description": "Lightweight and versatile, the Acer Swift 5 is perfect for everyday use.",
+    "specification": [
+      "14-inch FHD touchscreen",
+      "Intel i7 11th Gen processor",
+      "16GB RAM",
+      "512GB SSD storage",
+      "Ultra-thin design"
+    ],
+    "availability": true,
+    "rating": 4.4
+  }
+]

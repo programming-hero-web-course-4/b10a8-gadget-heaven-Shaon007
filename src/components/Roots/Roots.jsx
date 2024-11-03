@@ -1,7 +1,14 @@
+
+import { toast } from 'react-toastify';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
+import { Outlet } from 'react-router-dom';
 const Roots = () => {
   return (
     <div>
-      <h2>Roots</h2>
+      <Navbar></Navbar>
+      <Outlet></Outlet>
+      <Footer></Footer>
     </div>
   );
 };
