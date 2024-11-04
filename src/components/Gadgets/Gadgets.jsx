@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 const Gadgets = () => {
   const [gadgets, setGadgets] = useState([]);
-  const [categories, setCategories] = useState(['All', 'Smartwatch']); // Include 'Smartwatch' directly
+  const [categories, setCategories] = useState(['All', 'Smartwatch']);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const navigate = useNavigate();
 
@@ -13,9 +13,8 @@ const Gadgets = () => {
       .then(res => res.json())
       .then(data => {
         setGadgets(data);
-        // Add other categories dynamically based on the data if needed
         const uniqueCategories = [...new Set(data.map(gadget => gadget.category))];
-        setCategories(prev => [...new Set([...prev, ...uniqueCategories])]); // Combine with the initial categories
+        setCategories(prev => [...new Set([...prev, ...uniqueCategories])]);
       });
   }, []);
 
@@ -32,9 +31,9 @@ const Gadgets = () => {
               className={`py-3 bg-gray-200 rounded-full px-8 ${category === selectedCategory ? 'bg-purple-500 text-white' : ''}`}
               onClick={() => {
                 if (category === 'Smartwatch') {
-                  navigate('/empty'); // Navigate to the Empty component for Smartwatch
+                  navigate('/empty'); 
                 } else {
-                  setSelectedCategory(category); // Set selected category for other gadgets
+                  setSelectedCategory(category);
                 }
               }}
             >

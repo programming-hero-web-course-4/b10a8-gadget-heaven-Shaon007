@@ -39,11 +39,11 @@ const Navbar = () => {
       </div>
       <div tabIndex={0} role="button" className="navbar-end  ">
         <div className="indicator ">
-          <button className="rounded-full btn-ghost h-10 p-2 border-2 border-gray-300 "><i class="fa-solid fa-cart-shopping fa-lg "></i></button>
+          <button className="rounded-full btn-ghost h-10 p-2 border-2 border-gray-300 "><i className="fa-solid fa-cart-shopping fa-lg "></i></button>
           <span className=" indicator-item">8</span>
         </div>
         <div className="ml-4 indicator">
-          <button className=" btn-ghost rounded-full p-1 w-10 h-10 border-2 border-gray-300"><i class="fa-regular fa-heart fa-lg "></i></button>
+          <button className=" btn-ghost rounded-full p-1 w-10 h-10 border-2 border-gray-300"><i className="fa-regular fa-heart fa-lg "></i></button>
           <span className=" indicator-item">8</span>
         </div>
       </div>

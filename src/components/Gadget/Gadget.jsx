@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Gadget = ({ gadget }) => {
   const { product_id, product_title, product_image, price } = gadget;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className="w-[322px] flex flex-grow">
@@ -18,12 +18,12 @@ const Gadget = ({ gadget }) => {
           <h2 className="card-title">{product_title}</h2>
           <p>Price: ${price}</p>
           <div className="card-actions">
-            <button
-              onClick={() => navigate(`/products/${product_id}`)} 
+            <Link
+              to={`/product/${product_id}`}
               className="btn px-8 rounded-full bg-white border-2 border-violet-400"
             >
               View Details
-            </button>
+            </Link>
           </div>
         </div>
       </div>

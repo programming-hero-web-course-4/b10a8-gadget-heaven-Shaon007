@@ -10,7 +10,7 @@ import Roots from './components/Roots/Roots';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Homepage from './components/HomePage/Homepage';
 import Empty from './components/Empty';
-import ProductDetail from './components/ProductDetail/ProductDetail';
+import Details from './components/Gadget/Details';
 
 const router = createBrowserRouter([
   {
@@ -23,8 +23,8 @@ const router = createBrowserRouter([
         element: <Homepage />,
       },
       {
-        path: "products/:product_id",
-        element: <ProductDetail />,
+        path: "/product/:product_id",
+        element: <Details />
       },
       {
         path: "empty",
