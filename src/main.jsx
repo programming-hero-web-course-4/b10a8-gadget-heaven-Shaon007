@@ -1,7 +1,7 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { ToastContainer, toast } from 'react-toastify';
-import './index.css'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { ToastContainer } from 'react-toastify';
+import './index.css';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -9,31 +9,34 @@ import {
 import Roots from './components/Roots/Roots';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Homepage from './components/HomePage/Homepage';
-import Dashboard from './components/Dashboard/Dashboard';
-import Statistics from './components/Statistics/Statistics';
+import Empty from './components/Empty';
+import ProductDetail from './components/ProductDetail/ProductDetail';
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Roots />,
-    errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element:<Homepage></Homepage> ,
+        element: <Homepage />,
       },
       {
-        path: "dashboard",
-        element: <Dashboard/>,
+        path: "products/:product_id",
+        element: <ProductDetail />,
       },
       {
-        path: "statistics",
-        element: <Statistics></Statistics>,
+        path: "empty",
+        element: <Empty />,
       },
     ],
   },
 ]);
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
-)
+    <ToastContainer />
+  </StrictMode>
+);

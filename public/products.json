@@ -35,7 +35,7 @@
   },
   {
     "product_id": "P003",
-    "product_title": "Google Pixel 7 Pro",
+    "product_title": "Google Pixel Tensor 7 Pro",
     "product_image": "https://i.pinimg.com/736x/1d/40/89/1d4089f8aa949a0155afa3588c57158a.jpg",
     "category": "Smartphones",
     "price": 899,
@@ -185,7 +185,7 @@
   },
   {
     "product_id": "P012",
-    "product_title": "Acer Swift 5",
+    "product_title": "Acer Predator  Swifter FZ5",
     "product_image": "https://i.pinimg.com/564x/9b/a6/d1/9ba6d162a5cfd1ac2e48c9666b9ca5f9.jpg",
     "category": "Laptops",
     "price": 999,
