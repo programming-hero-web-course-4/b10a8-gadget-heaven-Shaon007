@@ -1,22 +1,27 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { getStoredCartList } from '../../../dist/assets/utility/addToDb';
+import { getStoredCartList, getStoredWishList } from '../../../dist/assets/utility/addToDb';
 import { useEffect, useState } from 'react';
 
 const Dashboard = () => {
-  const storedList = getStoredCartList();
+  const storedCartList = getStoredCartList();
+  const storedWishList = getStoredWishList();
   const [gadgets, setGadgets] = useState([]);
+  const [wishlistedGadgets, setWishlistedGadgets] = useState([]);
 
   useEffect(() => {
     fetch('./products.json')
       .then(res => res.json())
       .then(data => {
-        const filteredGadgets = data.filter(item => storedList.includes(item.product_id));
+        const filteredGadgets = data.filter(item => storedCartList.includes(item.product_id));
         setGadgets(filteredGadgets);
 
+        const filteredWishlistGadgets = data.filter(item => storedWishList.includes(item.product_id));
+        setWishlistedGadgets(filteredWishlistGadgets);
       })
       .catch(err => console.error(err));
   }, []);
+
   return (
     <div>
       {/* Header Section */}
@@ -63,7 +68,6 @@ const Dashboard = () => {
                       key={gadget.product_id}
                       className="flex items-center justify-between bg-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
                     >
-                      {/* Image Placeholder */}
                       <div className="w-20 h-20 bg-gray-300 rounded-md overflow-hidden">
                         <img
                           src={gadget.product_image}
@@ -72,30 +76,52 @@ const Dashboard = () => {
                         />
                       </div>
 
-                      {/* Product Info */}
                       <div className="flex-1 ml-4">
                         <h2 className="text-lg font-semibold text-gray-800">{gadget.product_title}</h2>
                         <p className="text-sm text-gray-500">{gadget.description}</p>
                         <p className="text-base font-bold text-gray-800 mt-2">Price: ${gadget.price}</p>
                       </div>
 
-                      {/* Close Button */}
                       <button className="text-red-500 text-lg hover:text-red-700 transition-colors">
                         &times;
                       </button>
                     </div>
                   ))}
                 </div>
-
               </div>
             </div>
           </TabPanel>
 
-          {/* Wishlist  */}
+          {/* Wishlist Tab Panel */}
           <TabPanel>
             <div className="max-w-4xl mx-auto p-4 bg-white rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4">Wishlist</h3>
-              <p>wishlist items</p>
+              <div className="space-y-4">
+                {wishlistedGadgets.map(gadget => (
+                  <div
+                    key={gadget.product_id}
+                    className="flex items-center justify-between bg-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="w-20 h-20 bg-gray-300 rounded-md overflow-hidden">
+                      <img
+                        src={gadget.product_image}
+                        alt={gadget.product_title}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+
+                    <div className="flex-1 ml-4">
+                      <h2 className="text-lg font-semibold text-gray-800">{gadget.product_title}</h2>
+                      <p className="text-sm text-gray-500">{gadget.description}</p>
+                      <p className="text-base font-bold text-gray-800 mt-2">Price: ${gadget.price}</p>
+                    </div>
+
+                    <button className="text-red-500 text-lg hover:text-red-700 transition-colors">
+                      &times;
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
           </TabPanel>
         </Tabs>
