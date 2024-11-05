@@ -11,6 +11,8 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import Homepage from './components/HomePage/Homepage';
 import Empty from './components/Empty';
 import Details from './components/Gadget/Details';
+import Statistics from './components/Statistics/Statistics';
+import Dashboard from './components/Dashboard/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -24,10 +26,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/product/:product_id",
-        element: <Details />
+        element: <Details />,
       },
       {
-        path: "empty",
+        path: "/statistics",
+        element: <Statistics />, // Add this route for Statistics
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+        loader: () => fetch('/products.json')
+      },
+      {
+        path: "/empty",
         element: <Empty />,
       },
     ],

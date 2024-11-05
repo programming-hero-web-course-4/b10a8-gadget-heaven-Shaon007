@@ -1,6 +1,6 @@
 [
   {
-    "product_id": "P001",
+    "product_id": "001",
     "product_title": "Apple iPhone 15 Pro Max",
     "product_image": "https://i.pinimg.com/564x/e7/bf/42/e7bf42f9914ac32d63dab02813d1280c.jpg",
     "category": "Smartphones",
@@ -17,7 +17,7 @@
     "rating": 4.8
   },
   {
-    "product_id": "P002",
+    "product_id": "002",
     "product_title": "Samsung Galaxy S23 Ultra",
     "product_image": "https://i.pinimg.com/564x/43/11/a3/4311a3ca3e3f3b5a27e3ffc08cfbfecf.jpg",
     "category": "Smartphones",
@@ -34,7 +34,7 @@
     "rating": 4.7
   },
   {
-    "product_id": "P003",
+    "product_id": "003",
     "product_title": "Google Pixel Tensor 7 Pro",
     "product_image": "https://i.pinimg.com/736x/1d/40/89/1d4089f8aa949a0155afa3588c57158a.jpg",
     "category": "Smartphones",
@@ -51,7 +51,7 @@
     "rating": 4.6
   },
   {
-    "product_id": "P004",
+    "product_id": "004",
     "product_title": "Sony WH-1000XM5",
     "product_image": "https://i.pinimg.com/564x/08/25/4c/08254ce0f681476675c70cedff46c6bf.jpg",
     "category": "Headphones",
@@ -67,7 +67,7 @@
     "rating": 4.6
   },
   {
-    "product_id": "P005",
+    "product_id": "005",
     "product_title": "Bose QuietComfort 45",
     "product_image": "https://i.pinimg.com/736x/d9/06/b9/d906b957efec13470cb6e2671fd94ed0.jpg",
     "category": "Headphones",
@@ -83,7 +83,7 @@
     "rating": 4.7
   },
   {
-    "product_id": "P006",
+    "product_id": "006",
     "product_title": "Jabra Elite 85h",
     "product_image": "https://i.pinimg.com/736x/e3/d8/00/e3d8008a1de62e8cc5cb2dbc81045bfc.jpg",
     "category": "Headphones",
@@ -99,7 +99,7 @@
     "rating": 4.5
   },
   {
-    "product_id": "P007",
+    "product_id": "007",
     "product_title": "MacBook Pro 16-inch",
     "product_image": "https://i.pinimg.com/736x/79/c1/ea/79c1eadc7cf5bdc42056ac47ced8305c.jpg",
     "category": "Laptops",
@@ -116,7 +116,7 @@
     "rating": 4.9
   },
   {
-    "product_id": "P008",
+    "product_id": "008",
     "product_title": "Dell XPS 13",
     "product_image": "https://i.pinimg.com/564x/e7/8f/d3/e78fd37bd92cf211b85f0279e31edec2.jpg",
     "category": "Laptops",
@@ -133,7 +133,7 @@
     "rating": 4.8
   },
   {
-    "product_id": "P009",
+    "product_id": "009",
     "product_title": "HP Spectre x360",
     "product_image": "https://i.pinimg.com/564x/b7/b0/29/b7b029281712853988ac7ee9edbc993d.jpg",
     "category": "Laptops",
@@ -150,7 +150,7 @@
     "rating": 4.7
   },
   {
-    "product_id": "P010",
+    "product_id": "010",
     "product_title": "Lenovo ThinkPad X1 Carbon",
     "product_image": "https://i.pinimg.com/564x/30/8b/e4/308be4259434a023f6e8d5d7b0545629.jpg",
     "category": "Laptops",
@@ -167,7 +167,7 @@
     "rating": 4.5
   },
   {
-    "product_id": "P011",
+    "product_id": "011",
     "product_title": "ASUS ROG Zephyrus G14",
     "product_image": "https://i.pinimg.com/564x/62/05/77/620577250a1226ba7c7deda5a2725fb5.jpg",
     "category": "Laptops",
@@ -184,7 +184,7 @@
     "rating": 4.6
   },
   {
-    "product_id": "P012",
+    "product_id": "012",
     "product_title": "Acer Predator  Swifter FZ5",
     "product_image": "https://i.pinimg.com/564x/9b/a6/d1/9ba6d162a5cfd1ac2e48c9666b9ca5f9.jpg",
     "category": "Laptops",

@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Roots from './components/Roots';
 import Gadgets from './components/Gadgets';
 import ProductDetail from './components/ProductDetail';
-import Empty from './components/Empty'; 
+import Empty from './components/Empty';
 
 const App = () => {
   return (

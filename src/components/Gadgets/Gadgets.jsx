@@ -31,7 +31,7 @@ const Gadgets = () => {
               className={`py-3 bg-gray-200 rounded-full px-8 ${category === selectedCategory ? 'bg-purple-500 text-white' : ''}`}
               onClick={() => {
                 if (category === 'Smartwatch') {
-                  navigate('/empty'); 
+                  navigate('/empty');
                 } else {
                   setSelectedCategory(category);
                 }

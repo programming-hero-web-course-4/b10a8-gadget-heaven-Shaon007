@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 const Gadget = ({ gadget }) => {
   const { product_id, product_title, product_image, price } = gadget;
-  // const navigate = useNavigate();
 
   return (
     <div className="w-[322px] flex flex-grow">
