@@ -2,7 +2,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { getStoredCartList, getStoredWishList } from '../../../dist/assets/utility/addToDb';
 import { useEffect, useState } from 'react';
-import { addToStoredCartList } from '../../../dist/assets/utility/addToDb';
+import { addToStoredCartList, addToStoredWishList } from '../../../dist/assets/utility/addToDb';
 
 const Dashboard = () => {
   const storedCartList = getStoredCartList();
@@ -15,6 +15,20 @@ const Dashboard = () => {
     // Remove from wishlist after adding to cart
     setWishlistedGadgets(prev => prev.filter(gadget => gadget.product_id !== id));
     alert("Product added to cart!");
+  };
+
+  const handleRemoveFromCart = (id) => {
+    const updatedCartList = storedCartList.filter(item => item !== id);
+    localStorage.setItem('cart-list', JSON.stringify(updatedCartList));
+    setGadgets(prev => prev.filter(gadget => gadget.product_id !== id));
+    alert("Product removed from cart!");
+  };
+
+  const handleRemoveFromWishlist = (id) => {
+    const updatedWishList = storedWishList.filter(item => item !== id);
+    localStorage.setItem('wish-list', JSON.stringify(updatedWishList));
+    setWishlistedGadgets(prev => prev.filter(gadget => gadget.product_id !== id));
+    alert("Product removed from wishlist!");
   };
 
   useEffect(() => {
@@ -84,7 +98,10 @@ const Dashboard = () => {
                         <p className="text-base font-bold text-gray-800 mt-2">Price: ${gadget.price}</p>
                       </div>
 
-                      <button className="text-red-500 text-lg hover:text-red-700 transition-colors">
+                      <button
+                        onClick={() => handleRemoveFromCart(gadget.product_id)}
+                        className="text-red-500 text-lg hover:text-red-700 transition-colors"
+                      >
                         &times;
                       </button>
                     </div>
@@ -128,7 +145,10 @@ const Dashboard = () => {
                       </button>
                     </div>
 
-                    <button className="text-red-500 text-lg hover:text-red-700 transition-colors">
+                    <button
+                      onClick={() => handleRemoveFromWishlist(gadget.product_id)}
+                      className="text-red-500 text-lg hover:text-red-700 transition-colors"
+                    >
                       &times;
                     </button>
                   </div>
