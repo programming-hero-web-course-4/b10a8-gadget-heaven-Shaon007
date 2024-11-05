@@ -79,10 +79,16 @@ const Detail = () => {
           </div>
 
           <div className="flex gap-4">
-            <button onClick={() => handleCart(product_id)} className="rounded-full bg-violet-500 text-white px-4 py-2 flex items-center">
+            <button
+              onClick={() => handleCart(product.product_id)}
+              className="rounded-full bg-violet-500 text-white px-4 py-2 flex items-center"
+            >
               Add To Cart <i className="fa-solid fa-cart-shopping ml-2"></i>
             </button>
-            <button onClick={() => handleWishlist(product_id)} className="bg-white border rounded-full border-gray-400 text-gray-700 p-2 h-10 w-10 flex items-center justify-center">
+            <button
+              onClick={() => handleWishlist(product.product_id)}
+              className="bg-white border rounded-full border-gray-400 text-gray-700 p-2 h-10 w-10 flex items-center justify-center"
+            >
               <i className="fa-regular fa-heart"></i>
             </button>
           </div>
