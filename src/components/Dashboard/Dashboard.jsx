@@ -1,52 +1,66 @@
+import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { getStoredCartList, getStoredWishList } from '../../../dist/assets/utility/addToDb';
-import { useEffect, useState } from 'react';
-import { addToStoredCartList, addToStoredWishList } from '../../../dist/assets/utility/addToDb';
+import { getStoredCartList, getStoredWishList, addToStoredCartList } from '../../../dist/assets/utility/addToDb';
 
 const Dashboard = () => {
   const storedCartList = getStoredCartList();
   const storedWishList = getStoredWishList();
   const [gadgets, setGadgets] = useState([]);
   const [wishlistedGadgets, setWishlistedGadgets] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Calculate total cost
+  const totalCost = gadgets.reduce((sum, gadget) => sum + gadget.price, 0);
 
   const handleAddToCart = (id) => {
     addToStoredCartList(id);
-    // Remove from wishlist after adding to cart
-    setWishlistedGadgets(prev => prev.filter(gadget => gadget.product_id !== id));
+    setWishlistedGadgets((prev) => prev.filter((gadget) => gadget.product_id !== id));
     alert("Product added to cart!");
+    
   };
 
   const handleRemoveFromCart = (id) => {
-    const updatedCartList = storedCartList.filter(item => item !== id);
+    const updatedCartList = storedCartList.filter((item) => item !== id);
     localStorage.setItem('cart-list', JSON.stringify(updatedCartList));
-    setGadgets(prev => prev.filter(gadget => gadget.product_id !== id));
+    setGadgets((prev) => prev.filter((gadget) => gadget.product_id !== id));
     alert("Product removed from cart!");
   };
 
   const handleRemoveFromWishlist = (id) => {
-    const updatedWishList = storedWishList.filter(item => item !== id);
+    const updatedWishList = storedWishList.filter((item) => item !== id);
     localStorage.setItem('wish-list', JSON.stringify(updatedWishList));
-    setWishlistedGadgets(prev => prev.filter(gadget => gadget.product_id !== id));
+    setWishlistedGadgets((prev) => prev.filter((gadget) => gadget.product_id !== id));
     alert("Product removed from wishlist!");
   };
 
   useEffect(() => {
     fetch('./products.json')
-      .then(res => res.json())
-      .then(data => {
-        const filteredGadgets = data.filter(item => storedCartList.includes(item.product_id));
+      .then((res) => res.json())
+      .then((data) => {
+        const filteredGadgets = data.filter((item) => storedCartList.includes(item.product_id));
         setGadgets(filteredGadgets);
 
-        const filteredWishlistGadgets = data.filter(item => storedWishList.includes(item.product_id));
+        const filteredWishlistGadgets = data.filter((item) => storedWishList.includes(item.product_id));
         setWishlistedGadgets(filteredWishlistGadgets);
       })
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   }, []);
 
   const sortGadgets = () => {
     const sortedGadgets = [...gadgets].sort((a, b) => b.price - a.price);
     setGadgets(sortedGadgets);
+  };
+
+  const handlePurchase = () => {
+    setIsModalOpen(true);
+  };
+
+  const confirmPurchase = () => {
+    localStorage.removeItem('cart-list');
+    setGadgets([]);
+    setIsModalOpen(false);
+    alert("Purchase successful!");
   };
 
   return (
@@ -55,15 +69,13 @@ const Dashboard = () => {
       <div className="bg-purple-500 text-center py-10">
         <h2 className="text-white text-3xl font-bold mb-2">Dashboard</h2>
         <p className="text-white mb-6">
-          Explore the latest gadgets that will take your experience to the next level. From smart devices to
-          the coolest accessories, we have it all!
+          Explore the latest gadgets that will take your experience to the next level.
         </p>
       </div>
 
       {/* Tabs and Content Section */}
       <div className="bg-gray-100 pt-4 pb-10">
         <Tabs>
-          {/* Tab Navigation */}
           <TabList className="flex justify-center gap-4 mb-8">
             <Tab className="px-4 py-2 font-semibold rounded-full cursor-pointer bg-purple-500 text-white">
               Cart
@@ -76,28 +88,33 @@ const Dashboard = () => {
           {/* Cart Tab Panel */}
           <TabPanel>
             <div className="max-w-4xl mx-auto p-4 bg-white rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Cart</h3>
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-xl font-semibold">Cart</h3>
+                <div className="flex items-center space-x-4">
+                  <p className="text-lg font-bold">Total cost: ${totalCost.toFixed(2)}</p>
+                  <button onClick={sortGadgets} className="px-4 py-2 border border-purple-500 text-purple-500 rounded-full">
+                    Sort by Price
+                  </button>
+                  <button
+                    onClick={handlePurchase}
+                    className="px-4 py-2 bg-purple-500 text-white rounded-full"
+                  >
+                    Purchase
+                  </button>
+                </div>
+              </div>
               {gadgets.length > 0 ? (
                 <div className="space-y-4">
-                  {gadgets.map(gadget => (
-                    <div
-                      key={gadget.product_id}
-                      className="flex items-center justify-between bg-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
-                    >
+                  {gadgets.map((gadget) => (
+                    <div key={gadget.product_id} className="flex items-center justify-between bg-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
                       <div className="w-20 h-20 bg-gray-300 rounded-md overflow-hidden">
-                        <img
-                          src={gadget.product_image}
-                          alt={gadget.product_title}
-                          className="object-cover w-full h-full"
-                        />
+                        <img src={gadget.product_image} alt={gadget.product_title} className="object-cover w-full h-full" />
                       </div>
-
                       <div className="flex-1 ml-4">
                         <h2 className="text-lg font-semibold text-gray-800">{gadget.product_title}</h2>
                         <p className="text-sm text-gray-500">{gadget.description}</p>
                         <p className="text-base font-bold text-gray-800 mt-2">Price: ${gadget.price}</p>
                       </div>
-
                       <button
                         onClick={() => handleRemoveFromCart(gadget.product_id)}
                         className="text-red-500 text-lg hover:text-red-700 transition-colors"
@@ -118,25 +135,15 @@ const Dashboard = () => {
             <div className="max-w-4xl mx-auto p-4 bg-white rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4">Wishlist</h3>
               <div className="space-y-4">
-                {wishlistedGadgets.map(gadget => (
-                  <div
-                    key={gadget.product_id}
-                    className="flex items-center justify-between bg-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
-                  >
+                {wishlistedGadgets.map((gadget) => (
+                  <div key={gadget.product_id} className="flex items-center justify-between bg-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
                     <div className="w-20 h-20 bg-gray-300 rounded-md overflow-hidden">
-                      <img
-                        src={gadget.product_image}
-                        alt={gadget.product_title}
-                        className="object-cover w-full h-full"
-                      />
+                      <img src={gadget.product_image} alt={gadget.product_title} className="object-cover w-full h-full" />
                     </div>
-
                     <div className="flex-1 ml-4">
                       <h2 className="text-lg font-semibold text-gray-800">{gadget.product_title}</h2>
                       <p className="text-sm text-gray-500">{gadget.description}</p>
                       <p className="text-base font-bold text-gray-800 mt-2">Price: ${gadget.price}</p>
-
-                      {/* Add to Cart Button */}
                       <button
                         onClick={() => handleAddToCart(gadget.product_id)}
                         className="mt-2 rounded-full bg-violet-500 text-white px-4 py-2 flex items-center"
@@ -144,7 +151,6 @@ const Dashboard = () => {
                         Add To Cart <i className="fa-solid fa-cart-shopping ml-2"></i>
                       </button>
                     </div>
-
                     <button
                       onClick={() => handleRemoveFromWishlist(gadget.product_id)}
                       className="text-red-500 text-lg hover:text-red-700 transition-colors"
@@ -158,6 +164,24 @@ const Dashboard = () => {
           </TabPanel>
         </Tabs>
       </div>
+
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center">
+          <div className="bg-white rounded-lg p-6 w-96 text-center">
+            <span className='text-center'><i class="fa-solid fa-circle-check fa-2xl pb-6"></i></span>
+            <h2 className="text-xl font-semibold mb-4 pb-4  border-b-2">Payment Successful</h2>
+            <p className="mb-2">Thanks for purchasing.</p>
+            <p className="mb-4">Total: ${totalCost.toFixed(2)}</p>
+            <button
+              onClick={confirmPurchase}
+              className="px-32 py-2 bg-gray-300 text-gray-900 font-bold rounded-full mr-4"
+            >
+              close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
