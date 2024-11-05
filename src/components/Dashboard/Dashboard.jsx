@@ -1,7 +1,22 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { getStoredCartList } from '../../../dist/assets/utility/addToDb';
+import { useEffect, useState } from 'react';
 
 const Dashboard = () => {
+  const storedList = getStoredCartList();
+  const [gadgets, setGadgets] = useState([]);
+
+  useEffect(() => {
+    fetch('./products.json')
+      .then(res => res.json())
+      .then(data => {
+        const filteredGadgets = data.filter(item => storedList.includes(item.product_id));
+        setGadgets(filteredGadgets);
+
+      })
+      .catch(err => console.error(err));
+  }, []);
   return (
     <div>
       {/* Header Section */}
@@ -42,7 +57,36 @@ const Dashboard = () => {
 
               {/* Cart Items */}
               <div className="space-y-4">
-                <p>Cart items.</p>
+                <div className="p-4 space-y-4">
+                  {gadgets.map(gadget => (
+                    <div
+                      key={gadget.product_id}
+                      className="flex items-center justify-between bg-gray-100 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+                    >
+                      {/* Image Placeholder */}
+                      <div className="w-20 h-20 bg-gray-300 rounded-md overflow-hidden">
+                        <img
+                          src={gadget.product_image}
+                          alt={gadget.product_title}
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
+
+                      {/* Product Info */}
+                      <div className="flex-1 ml-4">
+                        <h2 className="text-lg font-semibold text-gray-800">{gadget.product_title}</h2>
+                        <p className="text-sm text-gray-500">{gadget.description}</p>
+                        <p className="text-base font-bold text-gray-800 mt-2">Price: ${gadget.price}</p>
+                      </div>
+
+                      {/* Close Button */}
+                      <button className="text-red-500 text-lg hover:text-red-700 transition-colors">
+                        &times;
+                      </button>
+                    </div>
+                  ))}
+                </div>
+
               </div>
             </div>
           </TabPanel>
