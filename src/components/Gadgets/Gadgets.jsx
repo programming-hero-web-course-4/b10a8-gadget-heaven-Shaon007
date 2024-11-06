@@ -21,7 +21,7 @@ const Gadgets = () => {
   const filteredGadgets = selectedCategory === 'All' ? gadgets : gadgets.filter(gadget => gadget.category === selectedCategory);
 
   return (
-    <div className="flex justify-between w-11/12 mt-12 p-8">
+    <div className="flex justify-between mt-12 p-8 gap-6">
       <div>
         <div role="tablist" className="flex flex-col gap-2 border-2 rounded-3xl p-4 bg-white">
           {categories.map(category => (

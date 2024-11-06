@@ -10,14 +10,13 @@ const Dashboard = () => {
   const [wishlistedGadgets, setWishlistedGadgets] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Calculate total cost
   const totalCost = gadgets.reduce((sum, gadget) => sum + gadget.price, 0);
 
   const handleAddToCart = (id) => {
     addToStoredCartList(id);
     setWishlistedGadgets((prev) => prev.filter((gadget) => gadget.product_id !== id));
     alert("Product added to cart!");
-    
+
   };
 
   const handleRemoveFromCart = (id) => {
