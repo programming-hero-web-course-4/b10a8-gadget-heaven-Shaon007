@@ -13,6 +13,7 @@ import Empty from './components/Empty';
 import Details from './components/Gadget/Details';
 import Statistics from './components/Statistics/Statistics';
 import Dashboard from './components/Dashboard/Dashboard';
+import ReviewPage from './components/ReviewPage/ReviewPage';
 
 const router = createBrowserRouter([
   {
@@ -30,12 +31,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/statistics",
-        element: <Statistics />, // Add this route for Statistics
+        element: <Statistics />,
       },
       {
         path: "/dashboard",
         element: <Dashboard />,
         loader: () => fetch('/products.json')
+      },
+      {
+        path: "/review",
+        element: <ReviewPage/>,
       },
       {
         path: "/empty",

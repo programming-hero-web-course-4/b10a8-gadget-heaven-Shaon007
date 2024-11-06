@@ -6,12 +6,10 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar grid grid-cols-3 items-center justify-between sticky top-0 z-50 px-4 ${isHomepage ? "bg-purple-600 text-white" : "bg-base-100 text-black"
+      className={`navbar grid grid-cols-3 items-center  max-w-[1320px]  mx-auto justify-between sticky top-0 z-50 px-4 ${isHomepage ? "bg-[#9538E2] rounded-t-3xl text-white" : "bg-base-100 text-black"
         }`}
     >
-      {/* Left Section - Logo and Mobile Menu Button */}
       <div className="flex items-center">
-        {/* Mobile Menu Button */}
         <div className="dropdown lg:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost">
             <svg
@@ -36,35 +34,32 @@ const Navbar = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/statistics">Statistics</Link></li>
             <li><Link to="/dashboard">Dashboard</Link></li>
+            <li><Link to="/review">Review</Link></li>
           </ul>
         </div>
 
-        {/* Logo */}
-        <a className="btn btn-ghost text-xl font-bold">TechWiz</a>
+        <p className="pl-12 text-xl font-bold">TechWiz</p>
       </div>
 
-      {/* Center Section - Links for Desktop View */}
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-8">
-          <li><Link to="/">Home</Link></li>
+      <div className="navbar-center hidden lg:flex mx-auto">
+        <ul className="menu menu-horizontal px-1 ">
+          <li><Link to="/"><button className="">Home</button></Link></li>
           <li><Link to="/statistics">Statistics</Link></li>
           <li><Link to="/dashboard">Dashboard</Link></li>
+          <li><Link to="/review">Review</Link></li>
         </ul>
       </div>
 
-      {/* Right Section - Icons */}
-      <div className="navbar-end flex items-center space-x-4">
+      <div className="hidden md:block lg:ml-72 lg:space-x-4 ">
         <div className="indicator">
-          <button className="rounded-full btn-ghost h-10 w-10 border-2 border-gray-300 flex items-center justify-center">
-            <i className="fa-solid fa-cart-shopping fa-lg"></i>
+          <button className="rounded-full btn-ghost h-8 w-8 border-2 border-gray-300 flex items-center justify-center">
+            <i className="fa-solid fa-cart-shopping "></i>
           </button>
-          <span className="indicator-item  ">8</span>
         </div>
         <div className="indicator">
-          <button className="btn-ghost rounded-full h-10 w-10 border-2 border-gray-300 flex items-center justify-center">
-            <i className="fa-regular fa-heart fa-lg"></i>
+          <button className="btn-ghost rounded-full h-8 w-8 border-2 border-gray-300 flex items-center justify-center">
+            <i className="fa-regular fa-heart "></i>
           </button>
-          <span className="indicator-item ">8</span>
         </div>
       </div>
     </div>

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { getStoredCartList, getStoredWishList, addToStoredCartList } from '../../assets/utility/addToDb';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
   const storedCartList = getStoredCartList();
@@ -9,28 +12,27 @@ const Dashboard = () => {
   const [gadgets, setGadgets] = useState([]);
   const [wishlistedGadgets, setWishlistedGadgets] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const navigate = useNavigate();
   const totalCost = gadgets.reduce((sum, gadget) => sum + gadget.price, 0);
 
   const handleAddToCart = (id) => {
     addToStoredCartList(id);
     setWishlistedGadgets((prev) => prev.filter((gadget) => gadget.product_id !== id));
-    alert("Product added to cart!");
-
+    toast.success("Product added to cart!");
   };
 
   const handleRemoveFromCart = (id) => {
     const updatedCartList = storedCartList.filter((item) => item !== id);
     localStorage.setItem('cart-list', JSON.stringify(updatedCartList));
     setGadgets((prev) => prev.filter((gadget) => gadget.product_id !== id));
-    alert("Product removed from cart!");
+    toast.info("Product removed from cart!");
   };
 
   const handleRemoveFromWishlist = (id) => {
     const updatedWishList = storedWishList.filter((item) => item !== id);
     localStorage.setItem('wish-list', JSON.stringify(updatedWishList));
     setWishlistedGadgets((prev) => prev.filter((gadget) => gadget.product_id !== id));
-    alert("Product removed from wishlist!");
+    toast.info("Product removed from wishlist!");
   };
 
   useEffect(() => {
@@ -59,12 +61,14 @@ const Dashboard = () => {
     localStorage.removeItem('cart-list');
     setGadgets([]);
     setIsModalOpen(false);
-    alert("Purchase successful!");
+    toast.success("Purchase successful!");
+    navigate('/');
   };
 
   return (
     <div>
-      {/* Header Section */}
+      <ToastContainer />
+
       <div className="bg-purple-500 text-center py-10">
         <h2 className="text-white text-3xl font-bold mb-2">Dashboard</h2>
         <p className="text-white mb-6">
@@ -72,19 +76,17 @@ const Dashboard = () => {
         </p>
       </div>
 
-      {/* Tabs and Content Section */}
       <div className="bg-gray-100 pt-4 pb-10">
         <Tabs>
           <TabList className="flex justify-center gap-4 mb-8">
-            <Tab className="px-4 py-2 font-semibold rounded-full cursor-pointer bg-purple-500 text-white">
+            <Tab className="px-4 py-2 font-semibold rounded-full  bg-purple-500 text-white">
               Cart
             </Tab>
-            <Tab className="px-4 py-2 font-semibold rounded-full cursor-pointer text-purple-500 border border-purple-500">
+            <Tab className="px-4 py-2 font-semibold rounded-full  text-purple-500 border border-purple-500">
               Wishlist
             </Tab>
           </TabList>
 
-          {/* Cart Tab Panel */}
           <TabPanel>
             <div className="max-w-4xl mx-auto p-4 bg-white rounded-lg shadow-md">
               <div className="flex justify-between items-center mb-4">
@@ -96,7 +98,7 @@ const Dashboard = () => {
                   </button>
                   <button
                     onClick={handlePurchase}
-                    disabled={gadgets.length === 0} // Disable when cart is empty
+                    disabled={gadgets.length === 0}
                     className={`px-4 py-2 rounded-full ${gadgets.length > 0 ? 'bg-purple-500 text-white' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                       }`}
                   >
@@ -130,8 +132,6 @@ const Dashboard = () => {
               )}
             </div>
           </TabPanel>
-
-          {/* Wishlist Tab Panel */}
           <TabPanel>
             <div className="max-w-4xl mx-auto p-4 bg-white rounded-lg shadow-md">
               <h3 className="text-xl font-semibold mb-4">Wishlist</h3>
@@ -166,7 +166,6 @@ const Dashboard = () => {
         </Tabs>
       </div>
 
-      {/* Modal */}
       {isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-30 flex justify-center items-center">
           <div className="bg-white rounded-lg p-6 w-96 text-center">
