@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ReactStars from "react-rating-stars-component";
-import { addToStoredCartList, addToStoredWishList } from '../../../dist/assets/utility/addToDb';
+import { addToStoredCartList, addToStoredWishList } from '../../assets/utility/addToDb';
 
 const Detail = () => {
   const { product_id } = useParams();
