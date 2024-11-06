@@ -1,10 +1,10 @@
-// Empty.jsx
 import React from 'react';
 
 const Empty = () => {
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex flex-col  items-center justify-center my-44 ">
       <h1 className="text-2xl font-bold">No Data Available for Smartwatch</h1>
+
     </div>
   );
 };

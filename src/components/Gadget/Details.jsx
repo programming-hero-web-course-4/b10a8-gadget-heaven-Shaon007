@@ -52,12 +52,12 @@ const Detail = () => {
       <ToastContainer />
       <div className="pt-5 mb-64 bg-[#9538E2] w-full mt-2 h-[463px] relative z-10 flex flex-col items-center text-center">
         <h1 className="mb-5 text-2xl md:text-5xl font-bold text-white">Product Details</h1>
-        <p className="mb-5 text-lg md:text-xl text-white w-3/4">
+        <p className="mb-5 text-lg md:text-xl text-white w-8/12">
           Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!
         </p>
       </div>
 
-      <div className="flex gap-8 p-8 bg-white absolute top-[200px] z-10 w-[1170px] h-[480px] rounded-2xl">
+      <div className="flex flex-col lg:flex-row gap-8 p-8 bg-white absolute top-[200px] z-10 lg:w-[1170px] lg:h-[480px] rounded-2xl">
         <div>
           <img className="w-[424px] h-[420px] object-contain rounded-lg" src={product.product_image} alt="Product" />
         </div>

@@ -4,7 +4,7 @@ import Gadgets from '../Gadgets/Gadgets';
 
 const Homepage = () => {
   return (
-    <div className="flex flex-col items-center mb-12 bg-gray-100 max-w-[1440px] mx-auto">
+    <div className="flex flex-col items-center mb-12  max-w-[1440px] mx-auto">
       {/* Banner */}
       <Banner />
 

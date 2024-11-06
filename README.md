@@ -1,6 +1,6 @@
 # TechWiz
 
-GadgetHaven is a responsive e-commerce platform that allows users to explore and purchase gadgets. The platform includes a variety of features such as a shopping cart, wishlist system, and product filtering. This project leverages modern React features and techniques to provide a seamless user experience.
+TechWiz is a responsive e-commerce platform that allows users to explore and purchase gadgets. The platform includes a variety of features such as a shopping cart, wishlist system, and product filtering. This project leverages modern React features and techniques to provide a seamless user experience.
 
 ## Live Website Link
 
@@ -23,11 +23,12 @@ GadgetHaven is a responsive e-commerce platform that allows users to explore and
 ## Data Handling and Management
 
 - **LocalStorage**: Used to persist cart and wishlist data between sessions, ensuring that items remain in the cart even after refreshing the page or reopening the browser.
+- **Context API**: Used to share state between components without prop drilling, making it easier to manage user data (such as cart and wishlist items) globally.
 
-## Features of GadgetHaven
+## Features of TechWiz
 
 1. **Responsive Design**: The website adapts to various screen sizes, providing an optimal experience on desktop, tablet, and mobile devices.
-2. **Product Filtering**: Users can filter gadgets based on categories, price range, and more.
+2. **Product Filtering**: Users can filter gadgets based on categories.
 3. **Shopping Cart**: Users can add gadgets to their cart, view the cart, and proceed to checkout.
 4. **Wishlist System**: Users can add gadgets to their wishlist for future reference and easy access.
 5. **Product Detail Pages**: Each product has a detailed page that provides more information, images, and the option to add it to the cart.
