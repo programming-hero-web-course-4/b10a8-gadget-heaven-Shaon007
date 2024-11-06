@@ -1,6 +1,23 @@
 [
   {
     "product_id": "001",
+    "product_title": "MacBook Pro 16-inch Retina",
+    "product_image": "https://i.pinimg.com/564x/e8/f1/a0/e8f1a0c7bf6397c5fa536201eae0d42a.jpg",
+    "category": "Laptops",
+    "price": 2499,
+    "description": "The ultimate pro notebook with M1 Pro and M1 Max options.",
+    "specification": [
+      "16-inch Liquid Retina XDR display",
+      "Apple M1 Pro/Max chip",
+      "Up to 64GB unified memory",
+      "1TB SSD storage",
+      "100Wh battery with fast charging"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "002",
     "product_title": "Apple iPhone 15 Pro Max",
     "product_image": "https://i.pinimg.com/564x/e7/bf/42/e7bf42f9914ac32d63dab02813d1280c.jpg",
     "category": "Smartphones",
@@ -17,7 +34,7 @@
     "rating": 4.8
   },
   {
-    "product_id": "002",
+    "product_id": "003",
     "product_title": "Samsung Galaxy S23 Ultra",
     "product_image": "https://i.pinimg.com/564x/43/11/a3/4311a3ca3e3f3b5a27e3ffc08cfbfecf.jpg",
     "category": "Smartphones",
@@ -34,89 +51,7 @@
     "rating": 4.7
   },
   {
-    "product_id": "003",
-    "product_title": "Google Pixel Tensor 7 Pro",
-    "product_image": "https://i.pinimg.com/736x/1d/40/89/1d4089f8aa949a0155afa3588c57158a.jpg",
-    "category": "Smartphones",
-    "price": 899,
-    "description": "A smartphone that gets smarter with Google’s AI.",
-    "specification": [
-      "6.7-inch QHD+ LTPO OLED display",
-      "Google Tensor G2 processor",
-      "50MP wide and 48MP telephoto cameras",
-      "Titan M2 security chip",
-      "512GB storage"
-    ],
-    "availability": false,
-    "rating": 4.6
-  },
-  {
     "product_id": "004",
-    "product_title": "Sony WH-1000XM5",
-    "product_image": "https://i.pinimg.com/736x/b8/62/07/b862072a9d98b1afa6430a013358dd8e.jpg",
-    "category": "Headphones",
-    "price": 399,
-    "description": "Experience superior noise cancellation with Sony WH-1000XM5.",
-    "specification": [
-      "Noise Cancelling Technology",
-      "30-hour battery life",
-      "Touch controls",
-      "Multipoint Bluetooth connectivity"
-    ],
-    "availability": true,
-    "rating": 4.6
-  },
-  {
-    "product_id": "005",
-    "product_title": "Bose QuietComfort 45",
-    "product_image": "https://i.pinimg.com/736x/9e/bf/19/9ebf19e8d5e7ee7453a796b41eab0e24.jpg",
-    "category": "Headphones",
-    "price": 329,
-    "description": "Comfort and silence with Bose QuietComfort 45 headphones.",
-    "specification": [
-      "Acoustic Noise Cancelling",
-      "24-hour battery life",
-      "Lightweight design",
-      "Adjustable EQ"
-    ],
-    "availability": true,
-    "rating": 4.7
-  },
-  {
-    "product_id": "006",
-    "product_title": "Jabra Elite 85h",
-    "product_image": "https://i.pinimg.com/564x/6e/49/94/6e4994dfd2bafdeb6d222d5095826be3.jpg",
-    "category": "Headphones",
-    "price": 249,
-    "description": "Smart noise cancellation for your day-to-day life.",
-    "specification": [
-      "Smart Active Noise Cancellation",
-      "36-hour battery life",
-      "Water-resistant design",
-      "8 built-in microphones"
-    ],
-    "availability": false,
-    "rating": 4.5
-  },
-  {
-    "product_id": "007",
-    "product_title": "MacBook Pro 16-inch",
-    "product_image": "https://i.pinimg.com/564x/e8/f1/a0/e8f1a0c7bf6397c5fa536201eae0d42a.jpg",
-    "category": "Laptops",
-    "price": 2499,
-    "description": "The ultimate pro notebook with M1 Pro and M1 Max options.",
-    "specification": [
-      "16-inch Liquid Retina XDR display",
-      "Apple M1 Pro/Max chip",
-      "Up to 64GB unified memory",
-      "1TB SSD storage",
-      "100Wh battery with fast charging"
-    ],
-    "availability": true,
-    "rating": 4.9
-  },
-  {
-    "product_id": "008",
     "product_title": "Dell XPS 13",
     "product_image": "https://i.pinimg.com/564x/e7/8f/d3/e78fd37bd92cf211b85f0279e31edec2.jpg",
     "category": "Laptops",
@@ -133,7 +68,7 @@
     "rating": 4.8
   },
   {
-    "product_id": "009",
+    "product_id": "005",
     "product_title": "HP Spectre x360",
     "product_image": "https://i.pinimg.com/564x/25/57/2b/25572bd3217db727564fb7720904d3b9.jpg",
     "category": "Laptops",
@@ -150,8 +85,57 @@
     "rating": 4.7
   },
   {
-    "product_id": "010",
-    "product_title": "Lenovo ThinkPad X1 Carbon",
+    "product_id": "006",
+    "product_title": "Bose QuietComfort 45",
+    "product_image": "https://i.pinimg.com/736x/9e/bf/19/9ebf19e8d5e7ee7453a796b41eab0e24.jpg",
+    "category": "Headphones",
+    "price": 329,
+    "description": "Comfort and silence with Bose QuietComfort 45 headphones.",
+    "specification": [
+      "Acoustic Noise Cancelling",
+      "24-hour battery life",
+      "Lightweight design",
+      "Adjustable EQ"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "007",
+    "product_title": "Jabra Elite 85h",
+    "product_image": "https://i.pinimg.com/564x/6e/49/94/6e4994dfd2bafdeb6d222d5095826be3.jpg",
+    "category": "Headphones",
+    "price": 249,
+    "description": "Smart noise cancellation for your day-to-day life.",
+    "specification": [
+      "Smart Active Noise Cancellation",
+      "36-hour battery life",
+      "Water-resistant design",
+      "8 built-in microphones"
+    ],
+    "availability": false,
+    "rating": 4.5
+  },
+  {
+    "product_id": "008",
+    "product_title": "Google Pixel 7 Pro",
+    "product_image": "https://i.pinimg.com/736x/1d/40/89/1d4089f8aa949a0155afa3588c57158a.jpg",
+    "category": "Smartphones",
+    "price": 899,
+    "description": "A smartphone that gets smarter with Google’s AI.",
+    "specification": [
+      "6.7-inch QHD+ LTPO OLED display",
+      "Google Tensor G2 processor",
+      "50MP wide and 48MP telephoto cameras",
+      "Titan M2 security chip",
+      "512GB storage"
+    ],
+    "availability": false,
+    "rating": 4.6
+  },
+  {
+    "product_id": "009",
+    "product_title": "Lenovo X1 Carbon",
     "product_image": "https://i.pinimg.com/564x/30/8b/e4/308be4259434a023f6e8d5d7b0545629.jpg",
     "category": "Laptops",
     "price": 1280,
@@ -167,7 +151,7 @@
     "rating": 4.5
   },
   {
-    "product_id": "011",
+    "product_id": "010",
     "product_title": "ASUS ROG Zephyrus G14",
     "product_image": "https://i.pinimg.com/564x/db/1f/e2/db1fe2a55af18c48840879f755de0736.jpg",
     "category": "Laptops",
@@ -184,8 +168,8 @@
     "rating": 4.6
   },
   {
-    "product_id": "012",
-    "product_title": "Acer Predator  Swifter FZ5",
+    "product_id": "011",
+    "product_title": "Acer Predator Swifter FZ5",
     "product_image": "https://i.pinimg.com/564x/9b/a6/d1/9ba6d162a5cfd1ac2e48c9666b9ca5f9.jpg",
     "category": "Laptops",
     "price": 999,

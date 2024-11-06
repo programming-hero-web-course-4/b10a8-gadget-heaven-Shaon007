@@ -8,7 +8,6 @@ const Homepage = () => {
       {/* Banner */}
       <Banner />
 
-      {/* Heading */}
       <div className="mt-12">
         <h2 className="text-4xl">Explore Cutting-Edge Gadgets</h2>
       </div>

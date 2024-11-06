@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const ReviewPage = () => {
-  // Load reviews from localStorage or set default
   const loadReviews = () => {
     const savedReviews = localStorage.getItem('reviews');
     return savedReviews ? JSON.parse(savedReviews) : [];
@@ -10,7 +9,6 @@ const ReviewPage = () => {
   const [reviews, setReviews] = useState(loadReviews());
   const [newReview, setNewReview] = useState({ user: '', rating: 0, reviewText: '' });
 
-  // Update localStorage when reviews change
   useEffect(() => {
     localStorage.setItem('reviews', JSON.stringify(reviews));
   }, [reviews]);
@@ -22,7 +20,7 @@ const ReviewPage = () => {
       return;
     }
     setReviews([...reviews, newReview]);
-    setNewReview({ user: '', rating: 0, reviewText: '' }); // Reset form
+    setNewReview({ user: '', rating: 0, reviewText: '' });
   };
 
   const handleRemoveReview = (index) => {
@@ -35,7 +33,6 @@ const ReviewPage = () => {
       <h2 className="text-2xl font-bold mb-6">Product Reviews</h2>
 
       <form onSubmit={handleReviewSubmit} className="mb-6">
-        {/* Username Input */}
         <div className="mb-4">
           <label className="block text-lg font-semibold">Your Name</label>
           <input
@@ -47,7 +44,6 @@ const ReviewPage = () => {
           />
         </div>
 
-        {/* Rating Input */}
         <div className="mb-4">
           <label className="block text-lg font-semibold">Rating</label>
           <div className="flex">
@@ -63,7 +59,6 @@ const ReviewPage = () => {
           </div>
         </div>
 
-        {/* Review Text Input */}
         <div className="mb-4">
           <label className="block text-lg font-semibold">Your Review</label>
           <textarea
@@ -77,7 +72,7 @@ const ReviewPage = () => {
 
         <button
           type="submit"
-          className="px-6 py-2 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700"
+          className="px-6 py-2 bg-violet-500 text-white font-bold rounded-full hover:bg-violet-700"
         >
           Submit Review
         </button>
@@ -108,7 +103,7 @@ const ReviewPage = () => {
                 onClick={() => handleRemoveReview(index)}
                 className="mt-2 text-red-500 hover:text-red-700"
               >
-                Remove Review
+                <i class="fa-solid fa-trash"></i>
               </button>
             </div>
           ))
