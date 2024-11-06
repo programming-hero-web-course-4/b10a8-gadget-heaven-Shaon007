@@ -5,7 +5,7 @@ const Banner = () => {
         <h1 className="mb-5 text-4xl md:text-5xl font-bold text-white">
           Upgrade Your Tech Accessories with Gadget Heaven
         </h1>
-        <p className="mb-5 text-lg md:text-xl text-white">
+        <p className="mb-5 w-3/4 text-lg md:text-xl text-white">
           Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!
         </p>
         <button className="btn bg-white text-purple-700 font-bold rounded-full px-8 py-3 hover:bg-purple-200 transition duration-300">
