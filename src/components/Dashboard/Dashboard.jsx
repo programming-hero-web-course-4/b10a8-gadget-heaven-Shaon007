@@ -66,7 +66,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div>
+    <div className='max-w-[1440px] mx-auto'>
       <ToastContainer />
 
       <div className="bg-purple-500 text-center py-10">

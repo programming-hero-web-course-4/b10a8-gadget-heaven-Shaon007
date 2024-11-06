@@ -53,7 +53,7 @@
   {
     "product_id": "004",
     "product_title": "Sony WH-1000XM5",
-    "product_image": "https://i.pinimg.com/564x/08/25/4c/08254ce0f681476675c70cedff46c6bf.jpg",
+    "product_image": "https://i.pinimg.com/736x/b8/62/07/b862072a9d98b1afa6430a013358dd8e.jpg",
     "category": "Headphones",
     "price": 399,
     "description": "Experience superior noise cancellation with Sony WH-1000XM5.",
@@ -69,7 +69,7 @@
   {
     "product_id": "005",
     "product_title": "Bose QuietComfort 45",
-    "product_image": "https://i.pinimg.com/736x/d9/06/b9/d906b957efec13470cb6e2671fd94ed0.jpg",
+    "product_image": "https://i.pinimg.com/736x/9e/bf/19/9ebf19e8d5e7ee7453a796b41eab0e24.jpg",
     "category": "Headphones",
     "price": 329,
     "description": "Comfort and silence with Bose QuietComfort 45 headphones.",
@@ -85,7 +85,7 @@
   {
     "product_id": "006",
     "product_title": "Jabra Elite 85h",
-    "product_image": "https://i.pinimg.com/736x/e3/d8/00/e3d8008a1de62e8cc5cb2dbc81045bfc.jpg",
+    "product_image": "https://i.pinimg.com/564x/6e/49/94/6e4994dfd2bafdeb6d222d5095826be3.jpg",
     "category": "Headphones",
     "price": 249,
     "description": "Smart noise cancellation for your day-to-day life.",
@@ -101,7 +101,7 @@
   {
     "product_id": "007",
     "product_title": "MacBook Pro 16-inch",
-    "product_image": "https://i.pinimg.com/736x/79/c1/ea/79c1eadc7cf5bdc42056ac47ced8305c.jpg",
+    "product_image": "https://i.pinimg.com/564x/e8/f1/a0/e8f1a0c7bf6397c5fa536201eae0d42a.jpg",
     "category": "Laptops",
     "price": 2499,
     "description": "The ultimate pro notebook with M1 Pro and M1 Max options.",
@@ -135,7 +135,7 @@
   {
     "product_id": "009",
     "product_title": "HP Spectre x360",
-    "product_image": "https://i.pinimg.com/564x/b7/b0/29/b7b029281712853988ac7ee9edbc993d.jpg",
+    "product_image": "https://i.pinimg.com/564x/25/57/2b/25572bd3217db727564fb7720904d3b9.jpg",
     "category": "Laptops",
     "price": 1499,
     "description": "Flexible and powerful, with a 360° hinge for versatile use.",
@@ -169,7 +169,7 @@
   {
     "product_id": "011",
     "product_title": "ASUS ROG Zephyrus G14",
-    "product_image": "https://i.pinimg.com/564x/62/05/77/620577250a1226ba7c7deda5a2725fb5.jpg",
+    "product_image": "https://i.pinimg.com/564x/db/1f/e2/db1fe2a55af18c48840879f755de0736.jpg",
     "category": "Laptops",
     "price": 1599,
     "description": "Gaming and portability combined in the ASUS ROG Zephyrus G14.",

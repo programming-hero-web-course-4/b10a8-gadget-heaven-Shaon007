@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar grid grid-cols-3 items-center  max-w-[1320px]  mx-auto justify-between sticky top-0 z-50 px-4 ${isHomepage ? "bg-[#9538E2] rounded-t-3xl text-white" : "bg-base-100 text-black"
+      className={`navbar grid grid-cols-3 items-center    mx-auto justify-between sticky top-0 z-50 px-4 ${isHomepage ? "bg-[#9538E2] rounded-t-3xl max-w-[1320px] text-white" : "bg-base-100 max-w-[1440px] text-black"
         }`}
     >
       <div className="flex items-center">

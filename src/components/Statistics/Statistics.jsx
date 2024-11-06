@@ -23,8 +23,8 @@ const data = [
   {
     subject: 'Macbook',
     A: 99,
-    B: 100,
-    fullMark: 110,
+    B: 80,
+    fullMark: 80,
   },
   {
     subject: 'Watches',
@@ -42,11 +42,12 @@ const data = [
 
 const Statistics = () => {
   return (
-    <div className=" p-6">
-      <div>
-        <h2>Statistics</h2>
+    <div className=" px-6 ">
+      <div className='bg-[#9538E2] max-w-[1440px] h-[250px] text-center text-white mx-auto p-10'>
+        <h2 className='text-3xl font-bold py-4'>Statistics</h2>
+        <p className='mx-auto text-xl font-light w-2/3'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
       </div>
-      <h2 className="text-2xl font-bold pl-36 mb-6">Statistics</h2>
+      <h2 className="text-2xl font-bold pl-36 my-6">Statistics</h2>
       <div className='mx-auto'>
         <ResponsiveContainer width="100%" height={400}>
           <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
