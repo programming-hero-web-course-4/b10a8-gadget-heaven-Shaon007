@@ -1,12 +1,16 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ReactStars from "react-rating-stars-component";
-import { addToStoredCartList, addToStoredWishList } from '../../assets/utility/addToDb';
+import { addToStoredCartList, addToStoredWishList, getStoredCartList, getStoredWishList } from '../../assets/utility/addToDb';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Detail = () => {
   const { product_id } = useParams();
   const [product, setProduct] = useState(null);
   const [rating, setRating] = useState(0);
+  const [isInCart, setIsInCart] = useState(false);
+  const [isInWishlist, setIsInWishlist] = useState(false);
 
   const ratingChanged = (newRating) => {
     setRating(newRating);
@@ -14,12 +18,14 @@ const Detail = () => {
 
   const handleCart = (id) => {
     addToStoredCartList(id);
-    alert("Product added to cart!");
+    setIsInCart(true);
+    toast.success("Product added to cart!");
   };
 
   const handleWishlist = (id) => {
     addToStoredWishList(id);
-    alert("Product added to wishlist!");
+    setIsInWishlist(true);
+    toast.success("Product added to wishlist!");
   };
 
   useEffect(() => {
@@ -32,12 +38,19 @@ const Detail = () => {
           setRating(foundProduct.rating || 0);
         }
       });
+
+    // Check if the product is already in the cart or wishlist
+    const storedCartList = getStoredCartList();
+    const storedWishList = getStoredWishList();
+    setIsInCart(storedCartList.includes(product_id));
+    setIsInWishlist(storedWishList.includes(product_id));
   }, [product_id]);
 
   if (!product) return <p>Loading...</p>;
 
   return (
     <div className="relative w-full flex flex-col items-center h-[880px] bg-gray-200">
+      <ToastContainer />
       <div className="pt-5 mb-64 bg-[#9538E2] w-full mt-2 h-[463px] relative z-10 flex flex-col items-center text-center">
         <h1 className="mb-5 text-2xl md:text-5xl font-bold text-white">Product Details</h1>
         <p className="mb-5 text-lg md:text-xl text-white w-3/4">
@@ -81,13 +94,17 @@ const Detail = () => {
           <div className="flex gap-4">
             <button
               onClick={() => handleCart(product.product_id)}
-              className="rounded-full bg-violet-500 text-white px-4 py-2 flex items-center"
+              disabled={isInCart}
+              className={`rounded-full px-4 py-2 flex items-center ${isInCart ? 'bg-gray-400 text-white cursor-not-allowed' : 'bg-violet-500 text-white'
+                }`}
             >
-              Add To Cart <i className="fa-solid fa-cart-shopping ml-2"></i>
+              {isInCart ? 'In Cart' : 'Add To Cart'} <i className="fa-solid fa-cart-shopping ml-2"></i>
             </button>
             <button
               onClick={() => handleWishlist(product.product_id)}
-              className="bg-white border rounded-full border-gray-400 text-gray-700 p-2 h-10 w-10 flex items-center justify-center"
+              disabled={isInWishlist}
+              className={`bg-white border rounded-full border-gray-400 text-gray-700 p-2 h-10 w-10 flex items-center justify-center ${isInWishlist ? 'cursor-not-allowed' : ''
+                }`}
             >
               <i className="fa-regular fa-heart"></i>
             </button>

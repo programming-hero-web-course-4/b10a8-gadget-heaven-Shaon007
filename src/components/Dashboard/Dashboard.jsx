@@ -96,7 +96,9 @@ const Dashboard = () => {
                   </button>
                   <button
                     onClick={handlePurchase}
-                    className="px-4 py-2 bg-purple-500 text-white rounded-full"
+                    disabled={gadgets.length === 0} // Disable when cart is empty
+                    className={`px-4 py-2 rounded-full ${gadgets.length > 0 ? 'bg-purple-500 text-white' : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      }`}
                   >
                     Purchase
                   </button>
