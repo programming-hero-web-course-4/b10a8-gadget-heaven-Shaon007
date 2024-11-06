@@ -4,7 +4,7 @@ TechWiz is a responsive e-commerce platform that allows users to explore and pur
 
 ## Live Website Link
 
-[Visit TechWiz](https://bucolic-stroopwafel-43fc6c.netlify.app/)
+[Visit TechWiz](https://tech-wizz.netlify.app)
 
 ## Requirement Document Link
 
